@@ -102,12 +102,11 @@ module LocalServer
     # | 1  |   1    |
     # +----+--------+
     def greeting
-      ver, nmethods = @data.unpack("CC")
+      ver = @data.unpack("C")
       clear_data
       if ver == 5
         send_data "\x05\x00"  # NO AUTHENTICATION REQUIRED
       else
-        puts "Unsupported version"
         send_data "\x05\xFF"  # NO ACCEPTABLE METHODS
       end
       Fiber.yield
@@ -189,11 +188,11 @@ end
 ```
 
 * SOCKS5 の handshake をやるとき連続でデータのやり取りをするから、ここでは [Fiber](http://ruby-doc.org/core-2.2.3/Fiber.html) を使えば効率よくかつかっこ良く実装できます。
-* アクセスがきたら、SOCKS のバージョンは５だったら `\x05\x00` を返します。
+* アクセスがきたら、SOCKS のバージョンは５だったら `\x05\x00` を返します。（認識いらないから、NMETHODS と METHODS は無視）
 * 次にコマンドのデータがきます。仕様通りホストとポートを解析します。
     * 急いで書いたので、TCP しか実装していません。(´Д｀)
 * 解析したホストとポートと転送したいデータをリモートサーバーに送ります。
-    * shadowsocks はローカルからリモートに転送する時も SOCKS5 に従って実装してます。多分リモートサーバーの間に互換性をもたらすためです。こちらはシンプルのため、下記の形でデータを送ります。
+    * shadowsocks はローカルからリモートへ転送する時も SOCKS5 に従って実装してます。多分リモートサーバーの間に互換性をもたらすためです。こちらはシンプルのため、下記の形でデータを送ります。
     * `<HOST>:<PORT>\nDATA...`
 
 ### リモートサーバー

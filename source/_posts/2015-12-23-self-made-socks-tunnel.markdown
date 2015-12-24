@@ -19,7 +19,7 @@ categories:
 
 ## まえがき
 
-この間 [Great Firewall](http://www.wikiwand.com/ja/%E9%87%91%E7%9B%BE) は VPN も遮断するニュースがありまして、ちょっと周りの人とその話をしました。
+この間 [Great Firewall](http://www.wikiwand.com/ja/%E9%87%91%E7%9B%BE) が VPN も遮断するニュースがありまして、ちょっと周りの人とその話をしました。
 
 多分エンジニアの皆さんはご存知と思います。中国にいるならこれを越えないといろいろ不便になります。そのためにいろんなツールも作られています。一番有名のは [shadowsocks](https://github.com/shadowsocks/shadowsocks)、見ての通りいつかその存在が消えるかもしれませんね。エンジニアとしてはやはり自分がその仕組を理解すれば一番いいと思います。
 

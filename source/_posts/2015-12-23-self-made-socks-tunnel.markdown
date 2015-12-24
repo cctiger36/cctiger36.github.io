@@ -6,12 +6,15 @@ comments: true
 categories: 
 ---
 
+これは [【その2】ドリコム Advent Calendar 2015](http://www.adventar.org/calendars/1044) 24日目の記事です。  
+22日目の記事は hayato240 さんの[二郎を思い浮かべながら、RSpecを学んだことの振り返り](http://qiita.com/hayato240/items/d20e27da7d24a3bd3af2) です。  
+[【その1】ドリコム Advent Calendar 2015](http://www.adventar.org/calendars/1043) もあわせてどうぞ。
+
 ## 自己紹介
 
 こんにちは、タイガーです。
 
-中国上海からきてます。ドリコム歴はもう４年目です。
-
+中国上海からきてます。ドリコム歴はもう４年目です。  
 本業はサーバーサイドのエンジニアです。今年は iOS と Android のクライアントの開発も結構やりました。
 
 ## まえがき
@@ -27,6 +30,8 @@ Firewall を通過するには、[SOCKS5](https://www.wikiwand.com/en/SOCKS) っ
 すでに shadowsocks 大先輩があるので、それを参考にしながら作ってみましょう。言語はもちろん Ruby です。
 
 大体な構造は下図の通り
+
+{% img /images/socks-tunnel.png %}
 
 * まずはローカルサーバーとリモートサーバー２つの部分があります。
 * ブラウザとかの SOCKS5 をサポートしてるアプリケーションはローカルサーバーに接続します。
@@ -197,10 +202,8 @@ end
 
 ### リモートサーバー
 
-ローカルサーバーに比べたらすごくシンプルなものです。
-
-上記のホストとポートを取り出し、目標サーバーに接続し、データの部分をそのまま送ります。
-
+ローカルサーバーに比べたらすごくシンプルなものです。  
+上記のホストとポートを取り出し、目標サーバーに接続し、データの部分をそのまま送ります。  
 最後は帰ってきたリスポンスを逆の経路でブラウザに返します。
 
 ```ruby remote.rb https://github.com/cctiger36/socks-tunnel-demo/blob/master/remote.rb
@@ -271,7 +274,7 @@ end
 * ローカルで `bundle exec ruby local.rb` を実行します。
 * リモートサーバーで `bundle exec ruby remote.rb` を実行します。
 * ブラウザのプロキシの設定にローカルサーバーを設定します。Mac ならこんな感じです。
-{% img left /images/mac-proxy-settings.png %}
+{% img /images/mac-proxy-settings.png %}
 
 これでブラウザはプロキシ経由で外にアクセスできるはずです。
 
@@ -283,3 +286,7 @@ end
 今のローカルからリモートへの通信は Firewall に丸見えます。簡単に探知され、ゲームオーバーになります。
 
 暗号化については連休中で補完できればと思います。本当に申し訳ございません。m(＿ ＿)m
+
+## 明日
+
+【その2】ドリコム Adevent Calendar 2015 25日目は ericinderbuchtvontokio さんです。

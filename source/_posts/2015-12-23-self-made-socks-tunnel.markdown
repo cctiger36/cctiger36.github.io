@@ -204,7 +204,7 @@ end
 
 ローカルサーバーに比べたらすごくシンプルなものです。  
 上記のホストとポートを取り出し、目標サーバーに接続し、データの部分をそのまま送ります。  
-最後は帰ってきたリスポンスを逆の経路でブラウザに返します。
+最後は帰ってきたレスポンスを逆の経路でブラウザに返します。
 
 ```ruby remote.rb https://github.com/cctiger36/socks-tunnel-demo/blob/master/remote.rb
 require "eventmachine"

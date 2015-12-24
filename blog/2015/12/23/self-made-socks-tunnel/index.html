@@ -1,24 +1,92 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Tiger Blog]]></title>
-  <link href="http://cctiger36.github.io/atom.xml" rel="self"/>
-  <link href="http://cctiger36.github.io/"/>
-  <updated>2015-12-24T10:30:05+09:00</updated>
-  <id>http://cctiger36.github.io/</id>
-  <author>
-    <name><![CDATA[cctiger36]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Firewall を貫くツールを自作してみた - Tiger Blog</title>
+  <meta name="author" content="cctiger36">
 
   
-  <entry>
-    <title type="html"><![CDATA[Firewall を貫くツールを自作してみた]]></title>
-    <link href="http://cctiger36.github.io/blog/2015/12/23/self-made-socks-tunnel/"/>
-    <updated>2015-12-23T12:42:51+09:00</updated>
-    <id>http://cctiger36.github.io/blog/2015/12/23/self-made-socks-tunnel</id>
-    <content type="html"><![CDATA[<p>これは <a href="http://www.adventar.org/calendars/1044">【その2】ドリコム Advent Calendar 2015</a> 24日目の記事です。<br/>
+  <meta name="description" content="これは 【その2】ドリコム Advent Calendar 2015 24日目の記事です。
+22日目の記事は hayato240 さんの二郎を思い浮かべながら、RSpecを学んだことの振り返り です。
+【その1】ドリコム Advent Calendar 2015 もあわせてどうぞ。 自己紹介 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://cctiger36.github.io/blog/2015/12/23/self-made-socks-tunnel/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Tiger Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Tiger Blog</a></h1>
+  
+    <h2></h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="cctiger36.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Firewall を貫くツールを自作してみた</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-12-23T12:42:51+09:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>12:42 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>これは <a href="http://www.adventar.org/calendars/1044">【その2】ドリコム Advent Calendar 2015</a> 24日目の記事です。<br/>
 22日目の記事は hayato240 さんの<a href="http://qiita.com/hayato240/items/d20e27da7d24a3bd3af2">二郎を思い浮かべながら、RSpecを学んだことの振り返り</a> です。<br/>
 <a href="http://www.adventar.org/calendars/1043">【その1】ドリコム Advent Calendar 2015</a> もあわせてどうぞ。</p>
 
@@ -43,7 +111,7 @@
 
 <p>大体な構造は下図の通り</p>
 
-<p><img src="http://cctiger36.github.io/images/socks-tunnel.png"></p>
+<p><img src="/images/socks-tunnel.png"></p>
 
 <ul>
 <li>まずはローカルサーバーとリモートサーバー２つの部分があります。</li>
@@ -503,7 +571,7 @@
 <li>ローカルで <code>bundle exec ruby local.rb</code> を実行します。</li>
 <li>リモートサーバーで <code>bundle exec ruby remote.rb</code> を実行します。</li>
 <li>ブラウザのプロキシの設定にローカルサーバーを設定します。Mac ならこんな感じです。
-<img src="http://cctiger36.github.io/images/mac-proxy-settings.png"></li>
+<img src="/images/mac-proxy-settings.png"></li>
 </ul>
 
 
@@ -521,7 +589,95 @@
 <h2>明日</h2>
 
 <p>【その2】ドリコム Adevent Calendar 2015 25日目は ericinderbuchtvontokio さんです。</p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-</feed>
+
+<span class="byline author vcard">Posted by <span class="fn">cctiger36</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-12-23T12:42:51+09:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>12:42 pm</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://cctiger36.github.io/blog/2015/12/23/self-made-socks-tunnel/" data-via="" data-counturl="http://cctiger36.github.io/blog/2015/12/23/self-made-socks-tunnel/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/12/23/self-made-socks-tunnel/">Firewall を貫くツールを自作してみた</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - cctiger36 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

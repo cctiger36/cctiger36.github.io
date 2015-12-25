@@ -8,7 +8,7 @@ keywords: firewall,ファイアウォール,socks,socks5
 ---
 
 これは [【その2】ドリコム Advent Calendar 2015](http://www.adventar.org/calendars/1044) 24日目の記事です。  
-22日目の記事は hayato240 さんの[二郎を思い浮かべながら、RSpecを学んだことの振り返り](http://qiita.com/hayato240/items/d20e27da7d24a3bd3af2) です。  
+23日目の記事は hayato240 さんの[二郎を思い浮かべながら、RSpecを学んだことの振り返り](http://qiita.com/hayato240/items/d20e27da7d24a3bd3af2) です。  
 [【その1】ドリコム Advent Calendar 2015](http://www.adventar.org/calendars/1043) もあわせてどうぞ。
 
 ## 自己紹介

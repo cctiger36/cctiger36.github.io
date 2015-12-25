@@ -4,6 +4,7 @@ title: "Firewall を貫くツールを自作してみた"
 date: 2015-12-23 12:42:51 +0900
 comments: true
 categories: 
+keywords: firewall,ファイアウォール,socks,socks5
 ---
 
 これは [【その2】ドリコム Advent Calendar 2015](http://www.adventar.org/calendars/1044) 24日目の記事です。  
@@ -28,6 +29,8 @@ categories:
 Firewall を通過するには、[SOCKS5](https://www.wikiwand.com/en/SOCKS) っていうプロトコルが存在します。具体的な仕様は [RFC1928](https://www.ietf.org/rfc/rfc1928.txt) に定義されています。８ページしかないので、割りとすぐ読み終えます。基本的は SOCKS5 をベースにして作ればいろいろ汎用出来ます。
 
 すでに shadowsocks 大先輩があるので、それを参考にしながら作ってみましょう。言語はもちろん Ruby です。
+
+<!-- more -->
 
 大体な構造は下図の通り
 

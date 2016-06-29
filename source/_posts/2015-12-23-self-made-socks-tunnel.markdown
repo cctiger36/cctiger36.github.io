@@ -110,7 +110,7 @@ module LocalServer
     # | 1  |   1    |
     # +----+--------+
     def greeting
-      ver = @data.unpack("C")
+      ver = @data.unpack("C").first
       clear_data
       if ver == 5
         send_data "\x05\x00"  # NO AUTHENTICATION REQUIRED
@@ -196,7 +196,7 @@ end
 ```
 
 * SOCKS5 の handshake をやるとき連続でデータのやり取りをするから、ここでは [Fiber](http://ruby-doc.org/core-2.2.3/Fiber.html) を使えば効率よくかつかっこ良く実装できます。
-* アクセスがきたら、SOCKS のバージョンは５だったら `\x05\x00` を返します。（認識いらないから、NMETHODS と METHODS は無視）
+* アクセスがきたら、SOCKS のバージョンは５だったら `\x05\x00` を返します。（認証いらないから、NMETHODS と METHODS は無視）
 * 次にコマンドのデータがきます。仕様通りホストとポートを解析します。
     * 急いで書いたので、TCP しか実装していません。(´Д｀)
 * 解析したホストとポートと転送したいデータをリモートサーバーに送ります。

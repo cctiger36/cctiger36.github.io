@@ -371,7 +371,7 @@
 </span><span class='line'>    <span class="c1"># | 1  |   1    |</span>
 </span><span class='line'>    <span class="c1"># +----+--------+</span>
 </span><span class='line'>    <span class="k">def</span> <span class="nf">greeting</span>
-</span><span class='line'>      <span class="n">ver</span> <span class="o">=</span> <span class="vi">@data</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">ver</span> <span class="o">=</span> <span class="vi">@data</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
 </span><span class='line'>      <span class="n">clear_data</span>
 </span><span class='line'>      <span class="k">if</span> <span class="n">ver</span> <span class="o">==</span> <span class="mi">5</span>
 </span><span class='line'>        <span class="n">send_data</span> <span class="s2">&quot;</span><span class="se">\x05\x00</span><span class="s2">&quot;</span>  <span class="c1"># NO AUTHENTICATION REQUIRED</span>
@@ -459,7 +459,7 @@
 
 <ul>
 <li>SOCKS5 の handshake をやるとき連続でデータのやり取りをするから、ここでは <a href="http://ruby-doc.org/core-2.2.3/Fiber.html">Fiber</a> を使えば効率よくかつかっこ良く実装できます。</li>
-<li>アクセスがきたら、SOCKS のバージョンは５だったら <code>\x05\x00</code> を返します。（認識いらないから、NMETHODS と METHODS は無視）</li>
+<li>アクセスがきたら、SOCKS のバージョンは５だったら <code>\x05\x00</code> を返します。（認証いらないから、NMETHODS と METHODS は無視）</li>
 <li>次にコマンドのデータがきます。仕様通りホストとポートを解析します。
 
 <ul>
@@ -669,6 +669,8 @@
     <p class="meta">
       
       
+        <a class="basic-alignment right" href="/blog/2016/06/29/encryption-and-decryption-for-socks-tunnel/" title="Next Post: 自作 socks tunnel の暗号化について">自作 socks tunnel の暗号化について &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -679,7 +681,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - cctiger36 -
+  Copyright &copy; 2016 - cctiger36 -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
 </p>
 

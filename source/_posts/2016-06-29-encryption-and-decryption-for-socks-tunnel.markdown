@@ -78,6 +78,17 @@ def send_encoded_data(data)
 end
 ```
 
+通信内容はこんな感じになります。
+
+```
+HOST:IP (Encoded)
+DRECOMADVENTCALENDAR <- Delimiter
+DATA (Encoded)
+DRECOMADVENTCALENDAR <- Delimiter
+DATA (Encoded)
+DRECOMADVENTCALENDAR <- Delimiter
+```
+
 複合するところも一旦バッファに入れて、区切りのところまで切り取って順番に復号します。
 
 ```ruby

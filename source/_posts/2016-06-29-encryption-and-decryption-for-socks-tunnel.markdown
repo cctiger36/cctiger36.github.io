@@ -81,7 +81,7 @@ end
 通信内容はこんな感じになります。
 
 ```
-HOST:IP (Encoded)
+HOST:PORT (Encoded)
 DRECOMADVENTCALENDAR <- Delimiter
 DATA (Encoded)
 DRECOMADVENTCALENDAR <- Delimiter

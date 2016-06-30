@@ -236,6 +236,23 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
+<p>通信内容はこんな感じになります。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">HOST</span><span class="p">:</span><span class="no">IP</span> <span class="p">(</span><span class="no">Encoded</span><span class="p">)</span>
+</span><span class='line'><span class="no">DRECOMADVENTCALENDAR</span> <span class="o">&lt;-</span> <span class="no">Delimiter</span>
+</span><span class='line'><span class="no">DATA</span> <span class="p">(</span><span class="no">Encoded</span><span class="p">)</span>
+</span><span class='line'><span class="no">DRECOMADVENTCALENDAR</span> <span class="o">&lt;-</span> <span class="no">Delimiter</span>
+</span><span class='line'><span class="no">DATA</span> <span class="p">(</span><span class="no">Encoded</span><span class="p">)</span>
+</span><span class='line'><span class="no">DRECOMADVENTCALENDAR</span> <span class="o">&lt;-</span> <span class="no">Delimiter</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
 <p>複合するところも一旦バッファに入れて、区切りのところまで切り取って順番に復号します。</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>

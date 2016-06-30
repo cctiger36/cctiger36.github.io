@@ -4,7 +4,7 @@
   <title><![CDATA[Tiger Blog]]></title>
   <link href="http://cctiger36.github.io/atom.xml" rel="self"/>
   <link href="http://cctiger36.github.io/"/>
-  <updated>2016-06-30T10:28:49+09:00</updated>
+  <updated>2016-06-30T10:30:12+09:00</updated>
   <id>http://cctiger36.github.io/</id>
   <author>
     <name><![CDATA[cctiger36]]></name>
@@ -143,7 +143,7 @@
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">HOST</span><span class="p">:</span><span class="no">IP</span> <span class="p">(</span><span class="no">Encoded</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">HOST</span><span class="p">:</span><span class="no">PORT</span> <span class="p">(</span><span class="no">Encoded</span><span class="p">)</span>
 </span><span class='line'><span class="no">DRECOMADVENTCALENDAR</span> <span class="o">&lt;-</span> <span class="no">Delimiter</span>
 </span><span class='line'><span class="no">DATA</span> <span class="p">(</span><span class="no">Encoded</span><span class="p">)</span>
 </span><span class='line'><span class="no">DRECOMADVENTCALENDAR</span> <span class="o">&lt;-</span> <span class="no">Delimiter</span>
